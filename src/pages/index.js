@@ -1,7 +1,7 @@
 import logo from "../static/images/logos/logo.svg"
 // import './App.css';
 import Layout from "../components/layout"
-
+import { Link } from 'react-router-dom'
 
 function IndexPage() {
     return (
@@ -10,9 +10,7 @@ function IndexPage() {
                 <h1>Elizabeth | Design System</h1>
                 <p>Welcome to your new site.</p>
                 <img src={logo} className="App-logo" alt="logo" />
-                <p>
-                    Edit <code>src/App.js</code> and save to reload.
-                </p>
+                <Link to="/page-2/">Go to page 2</Link> <br />
             </header>
         </Layout>
     );

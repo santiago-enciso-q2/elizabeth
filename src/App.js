@@ -2,10 +2,8 @@ import React from "react"
 import {
     BrowserRouter as Router,
     Switch,
-    Route,
-    Link
+    Route
 } from "react-router-dom";
-import logo from "./static/images/logos/logo.svg"
 import './App.css';
 import Layout from "./components/layout"
 import IndexPage from "./pages/index"
