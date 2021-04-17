@@ -4,7 +4,6 @@ import {
     Switch,
     Route
 } from "react-router-dom";
-import './App.css';
 import Layout from "./components/layout"
 import IndexPage from "./pages/index"
 import SecondPage from "./pages/page-2"
