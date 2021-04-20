@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { H1, MediumText } from "../styles/TextStyles";
 import { themes } from "../styles/ColorStyles";
+import PurchaseButton from "../buttons/PurchaseButton";
 function HeroSection() {
   return (
     <Wrapper>
@@ -9,6 +10,10 @@ function HeroSection() {
         <TextWrapper>
           <Title>Elizabeth</Title>
           <Description>Welcome to your new site.</Description>
+          <PurchaseButton
+            title="Start Learning"
+            subtitle="120+ hours of video"
+          />
         </TextWrapper>
       </ContentWrapper>
     </Wrapper>
