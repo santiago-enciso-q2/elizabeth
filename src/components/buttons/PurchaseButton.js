@@ -2,12 +2,16 @@ import React from "react";
 import styled from "styled-components";
 import { Caption2, SmallText } from "../styles/TextStyles";
 import { Link } from "react-router-dom";
+import image from "../../static/images/icons/credit.svg";
 
 export default function PurchaseButton(props) {
   const { title, subtitle } = props;
   return (
     <Link to="page-2">
       <Wrapper>
+        <IconWrapper>
+          <Icon src={image} />
+        </IconWrapper>
         <Title>{title || "Learn to Code"}</Title>
         <Subtitle>{subtitle || "$19 per month"}</Subtitle>
       </Wrapper>
@@ -26,5 +30,24 @@ const Wrapper = styled.div`
   border-radius: 20px;
   border: 0px;
 `;
-const Title = styled(Caption2)``;
-const Subtitle = styled(SmallText)``;
+const Title = styled(Caption2)`
+  color: black;
+`;
+const Subtitle = styled(SmallText)`
+  color: black;
+  opacity: 0.7;
+`;
+
+const IconWrapper = styled.div`
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(200.44deg, #4316db 13.57%, #9076e7 98.38%);
+  border-radius: 50%;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+`;
+const Icon = styled.img`
+  width: 29px;
+  height: 29px;
+`;
