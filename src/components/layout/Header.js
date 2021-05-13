@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import logo from "../../static/images/logos/logo.svg";
 import MenuButton from "../buttons/MenuButton";
+import MenuTooltip from "../tooltips/MenuTooltip";
 
 export default function Header() {
   return (
@@ -16,6 +17,7 @@ export default function Header() {
           <MenuButton item={item} key={index} />
         ))}
       </MenuWrapper>
+      <MenuTooltip />
     </Wrapper>
   );
 }
