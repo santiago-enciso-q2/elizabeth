@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { menuData } from "../../data/menuData";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
@@ -7,17 +7,27 @@ import MenuButton from "../buttons/MenuButton";
 import MenuTooltip from "../tooltips/MenuTooltip";
 
 export default function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <Wrapper>
       <Link exact to="/">
-        <img src={logo} />
+        <img src={logo} alt="site-logo" />
       </Link>
       <MenuWrapper count={menuData.length}>
-        {menuData.map((item, index) => (
-          <MenuButton item={item} key={index} />
-        ))}
+        {menuData.map((item, index) =>
+          item.link === "/account" ? (
+            <MenuButton
+              item={item}
+              key={index}
+              onClick={() => setIsOpen(!isOpen)}
+            />
+          ) : (
+            <MenuButton item={item} key={index} />
+          )
+        )}
       </MenuWrapper>
-      <MenuTooltip />
+      <MenuTooltip isOpen={isOpen} />
     </Wrapper>
   );
 }
