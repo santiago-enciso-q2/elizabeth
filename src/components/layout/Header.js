@@ -8,11 +8,15 @@ import MenuTooltip from "../tooltips/MenuTooltip";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  function handleClick(event) {
+    event.preventDefault();
+    setIsOpen(!isOpen);
+  }
 
   return (
     <Wrapper>
       <Link exact to="/">
-        <img src={logo} alt="site-logo" />
+        <img src={logo} alt="Logo" />
       </Link>
       <MenuWrapper count={menuData.length}>
         {menuData.map((item, index) =>
@@ -20,7 +24,7 @@ export default function Header() {
             <MenuButton
               item={item}
               key={index}
-              onClick={() => setIsOpen(!isOpen)}
+              onClick={(event) => handleClick(event)}
             />
           ) : (
             <MenuButton item={item} key={index} />

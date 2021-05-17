@@ -3,9 +3,9 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export default function MenuButton(props) {
-  const { item } = props;
+  const { item, onClick } = props;
   return (
-    <Link to={item.link}>
+    <Link to={item.link} onClick={onClick}>
       <MenuItem title={item.title}>
         <img src={item.icon} alt={item.title} />
         {item.title}
