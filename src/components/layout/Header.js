@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { menuData } from "../../data/menuData";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
@@ -9,17 +9,32 @@ import hamburgerSVG from "../../static/images/icons/hamburger.svg";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const ref = useRef();
   function handleClick(event) {
     event.preventDefault();
     setIsOpen(!isOpen);
   }
+
+  function handleClickOutside(event) {
+    if (ref.current && !ref.current.contains(event.target)) {
+      console.log("Document is clicked");
+      setIsOpen(false);
+    }
+  }
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <Wrapper>
       <Link exact to="/">
         <img src={logo} alt="Logo" />
       </Link>
-      <MenuWrapper count={menuData.length}>
+      <MenuWrapper count={menuData.length} ref={ref}>
         {menuData.map((item, index) =>
           item.link === "/account" ? (
             <MenuButton
@@ -32,7 +47,10 @@ export default function Header() {
           )
         )}
         <HamburgerWrapper>
-          <MenuButton item={{ title: "", icon: hamburgerSVG, link: "" }} />
+          <MenuButton
+            item={{ title: "", icon: hamburgerSVG, link: "" }}
+            onClick={(event) => handleClick(event)}
+          />
         </HamburgerWrapper>
       </MenuWrapper>
       <MenuTooltip isOpen={isOpen} />
