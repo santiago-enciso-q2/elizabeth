@@ -10,13 +10,18 @@ import hamburgerSVG from "../../static/images/icons/hamburger.svg";
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const ref = useRef();
+  const toolTipRef = useRef();
   function handleClick(event) {
     event.preventDefault();
     setIsOpen(!isOpen);
   }
 
   function handleClickOutside(event) {
-    if (ref.current && !ref.current.contains(event.target)) {
+    if (
+      ref.current &&
+      !ref.current.contains(event.target) &&
+      !toolTipRef.current.contains(event.target)
+    ) {
       console.log("Document is clicked");
       setIsOpen(false);
     }
@@ -31,7 +36,7 @@ export default function Header() {
 
   return (
     <Wrapper>
-      <Link exact to="/">
+      <Link to="/">
         <img src={logo} alt="Logo" />
       </Link>
       <MenuWrapper count={menuData.length} ref={ref}>
@@ -53,7 +58,9 @@ export default function Header() {
           />
         </HamburgerWrapper>
       </MenuWrapper>
-      <MenuTooltip isOpen={isOpen} />
+      <div ref={toolTipRef}>
+        <MenuTooltip isOpen={isOpen} />
+      </div>
     </Wrapper>
   );
 }
