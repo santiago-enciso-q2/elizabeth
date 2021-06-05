@@ -25,7 +25,7 @@ export const colors = {
 
 export const themes = {
   light: {
-    textPrimary: `${colors.neutral600}`,
+    textPrimary: `${colors.primary100}`,
     textSecondary: `${colors.primary200}`,
     backgroundColor: `${colors.neutral100}`,
     card: {
