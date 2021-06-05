@@ -1,10 +1,34 @@
+export const colors = {
+  primary100: `rgba(102, 44, 145, 1)`,
+  primary200: `rgba(23, 163, 152, 1)`,
+  primary300: `rgba(255, 31, 87, 1)`,
+  primary400: `rgba(245, 255, 112, 1)`,
+  primary100dark: `rgba(87, 38, 125, 1)`,
+  primary100lighter: `rgba(148, 99, 186, 1)`,
+  primary100lightest: `rgba(179, 130, 217, 1)`,
+  neutral100: `rgba(255, 255, 255, 1)`,
+  neutral200: `rgba(204, 204, 204, 1)`,
+  neutral300: `rgba(133, 133, 133, 1)`,
+  neutral400: `rgba(92, 92, 92, 1)`,
+  neutral500: `rgba(51, 51, 51, 1)`,
+  neutral600: `rgba(0, 0, 0, 1)`,
+  success100: `rgba(23, 163, 152, 1)`,
+  success200: `rgba(18, 125, 116, 1)`,
+  success300: `rgba(13, 89, 83, 1)`,
+  error100: `rgba(255, 31, 87, 1)`,
+  error200: `rgba(245, 0, 61, 1)`,
+  error300: `rgba(204, 0, 51, 1)`,
+  warning100: `rgba(245, 255, 112, 1)`,
+  warning200: `rgba(239, 255, 10, 1)`,
+  warning300: `rgba(209, 224, 0, 1)`,
+};
+
 export const themes = {
   light: {
     text1: `black`,
     text2: `rgba(0,0,0,0.7)`,
-    primary: `#3913B8`,
     secondary: "#2FB5FC",
-    backgroundColor: `#f2f6ff`,
+    // backgroundColor: `#f2f6ff`,
     card: {
       backgroundColor: `rgba(255, 255, 255, 0.6)`,
       boxShadow: `0px 50px 100px rgba(34, 79, 169, 0.3),
