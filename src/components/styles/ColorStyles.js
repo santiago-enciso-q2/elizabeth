@@ -7,11 +7,11 @@ export const colors = {
   primary100lighter: `rgba(148, 99, 186, 1)`,
   primary100lightest: `rgba(179, 130, 217, 1)`,
   neutral100: `rgba(255, 255, 255, 1)`,
-  neutral200: `rgba(204, 204, 204, 1)`,
+  neutral200: `rgba(204, 204, 204, 0.7)`,
   neutral300: `rgba(133, 133, 133, 1)`,
-  neutral400: `rgba(92, 92, 92, 1)`,
+  neutral400: `rgba(92, 92, 92, 0.6)`,
   neutral500: `rgba(51, 51, 51, 1)`,
-  neutral600: `rgba(0, 0, 0, 1)`,
+  neutral600: `rgba(0, 0, 0, 0.7)`,
   success100: `rgba(23, 163, 152, 1)`,
   success200: `rgba(18, 125, 116, 1)`,
   success300: `rgba(13, 89, 83, 1)`,
@@ -25,15 +25,14 @@ export const colors = {
 
 export const themes = {
   light: {
-    text1: `black`,
-    text2: `rgba(0,0,0,0.7)`,
-    secondary: "#2FB5FC",
-    // backgroundColor: `#f2f6ff`,
+    textPrimary: `${colors.neutral600}`,
+    textSecondary: `${colors.primary200}`,
+    backgroundColor: `${colors.neutral100}`,
     card: {
-      backgroundColor: `rgba(255, 255, 255, 0.6)`,
+      backgroundColor: `${colors.neutral400}`,
       boxShadow: `0px 50px 100px rgba(34, 79, 169, 0.3),
       inset 0 0 0 0.5px rgba(255, 255, 255, 0.6)`,
-      backgroundColorFull: `rgba(255, 255, 255, 1)`,
+      backgroundColorFull: `${colors.neutral100}`,
     },
     cardHover: {
       backgroundColor: `rgba(68, 66, 178, 0.1)`,
@@ -53,14 +52,14 @@ export const themes = {
     },
   },
   dark: {
-    text1: `white`,
-    text2: `rgba(255,255,255,0.7)`,
-    backgroundColor: `#1F1F47`,
+    textPrimary: `${colors.neutral100}`,
+    textSecondary: `${colors.neutral200}`,
+    backgroundColor: `${colors.primary100}`,
     card: {
-      backgroundColor: `rgba(25, 24, 63, 0.98)`,
+      backgroundColor: `${colors.primary100dark}`,
       boxShadow: `0px 30px 60px rgba(0, 0, 0, 0.25),
       inset 0 0 0 0.5px rgba(255, 255, 255, 0.2)`,
-      backgroundColorFull: `rgba(15, 14, 71, 1)`,
+      backgroundColorFull: `${colors.primary100}`,
     },
     cardHover: {
       backgroundColor: `rgba(255, 255, 255, 0.1)`,
@@ -76,7 +75,7 @@ export const themes = {
       backgroundColor: `rgba(50, 61, 109, 0.5)`,
       boxShadow: `0px 50px 100px rgba(0, 0, 0, 0.25),
       inset 0 0 0 0.5px rgba(255, 255, 255, 0.3)`,
-      backgroundColorFull: `rgba(15, 14, 71, 1)`,
+      backgroundColorFull: `${colors.primary100lighter}`,
     },
   },
 };
