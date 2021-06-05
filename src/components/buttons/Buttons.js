@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { themes } from "../styles/ColorStyles";
 
 const Button = styled.button`
   padding: 12px 24px;
@@ -11,10 +12,9 @@ const Button = styled.button`
 `;
 
 const PrimaryButton = styled(Button)`
-  // CSS
-  background: red;
+  background-color: ${themes.dark.backgroundColor};
   border: none;
-  color: white;
+  color: ${themes.dark.textPrimary};
 `;
 
 export default PrimaryButton;
