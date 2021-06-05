@@ -5,6 +5,7 @@ import { themes } from "../styles/ColorStyles";
 import PurchaseButton from "../buttons/PurchaseButton";
 import MockupAnimation from "../animations/MockupAnimation";
 import WaveBackground from "../backgrounds/WaveBackground";
+import PrimaryButton from "../buttons/Buttons";
 
 function HeroSection() {
   return (
@@ -18,6 +19,7 @@ function HeroSection() {
             <br />
             System
           </Title>
+          <PrimaryButton>Primary Button</PrimaryButton>
           <Description>Welcome to your new site.</Description>
           <PurchaseButton
             title="Start Learning"
