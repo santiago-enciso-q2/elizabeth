@@ -11,7 +11,7 @@ import {
   TertiaryButton,
 } from "../buttons/Buttons";
 
-function HeroSection() {
+const HeroSection = () => {
   return (
     <Wrapper>
       <WaveBackground />
@@ -36,7 +36,7 @@ function HeroSection() {
       </ContentWrapper>
     </Wrapper>
   );
-}
+};
 export default HeroSection;
 
 const animation = keyframes`
