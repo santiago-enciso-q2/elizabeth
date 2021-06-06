@@ -69,6 +69,12 @@ const TextWrapper = styled.div`
   display: grid;
   gap: 30px;
 
+  /* button transition */
+  *,
+  & {
+    transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+
   /*selects immediate children*/
   > * {
     opacity: 0;
