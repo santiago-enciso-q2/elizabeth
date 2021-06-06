@@ -32,10 +32,13 @@ export const themes = {
     button: {
       primaryColor: `${colors.primary100}`,
       primaryHoverColor: `${colors.primary100dark}`,
+      primaryFocusColor: `${colors.primary100lightest}`,
       primaryActiveColor: `${colors.primary100lighter}`,
       textColorOnPrimary: `${colors.neutral100}`,
       textColor: `${colors.primary100dark}`,
       textColorInverted: `${colors.primary100dark}`,
+      disabled: `${colors.neutral300}`,
+      textOnDisabled: `${colors.neutral100}`,
     },
     card: {
       backgroundColor: `${colors.neutral400}`,
