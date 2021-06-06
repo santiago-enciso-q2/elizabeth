@@ -28,6 +28,15 @@ export const themes = {
     textPrimary: `${colors.primary100}`,
     textSecondary: `${colors.primary200}`,
     backgroundColor: `${colors.neutral100}`,
+
+    button: {
+      primaryColor: `${colors.primary100}`,
+      primaryHoverColor: `${colors.primary100dark}`,
+      primaryActiveColor: `${colors.primary100lighter}`,
+      textColorOnPrimary: `${colors.neutral100}`,
+      textColor: `${colors.primary100dark}`,
+      textColorInverted: `${colors.primary100dark}`,
+    },
     card: {
       backgroundColor: `${colors.neutral400}`,
       boxShadow: `0px 50px 100px rgba(34, 79, 169, 0.3),
