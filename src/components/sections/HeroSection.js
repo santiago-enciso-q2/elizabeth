@@ -74,22 +74,6 @@ const TextWrapper = styled.div`
   & {
     transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
   }
-
-  /*selects immediate children*/
-  > * {
-    opacity: 0;
-    animation: ${animation} 1s forwards;
-
-    :nth-child(1) {
-      animation-delay: 0s;
-    }
-    :nth-child(2) {
-      animation-delay: 0.2s;
-    }
-    :nth-child(3) {
-      animation-delay: 0.4s;
-    }
-  }
 `;
 
 const Title = styled(H1)`
