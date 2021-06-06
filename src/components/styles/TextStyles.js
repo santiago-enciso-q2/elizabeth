@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 export const primaryFont = "Nunito, monospace";
 
 export const typeScale = {

@@ -1,18 +1,19 @@
 import { createGlobalStyle } from "styled-components";
 import { themes, themes as theme } from "./ColorStyles";
 import { normalize } from "polished";
+import { primaryFont } from "./TextStyles";
 
 export const GlobalStyle = createGlobalStyle`
+  
   @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
   @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+  
   ${normalize()}
 
   body {
     line-height: 1;
-    font-family: "Nunito", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-family: Nunito, monospace;
     font-size: 16px;
-    /* ##### Google Fonts*/
-    /*font-family: 'Open Sans', sans-serif;*/
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background: ${theme.light.backgroundColor};
