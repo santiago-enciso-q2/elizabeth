@@ -1,8 +1,20 @@
 import styled from "styled-components";
+export const primaryFont = "Nunito, monospace";
+
+export const typeScale = {
+  header1: "1.8rem",
+  header2: "1.6rem",
+  header3: "1.4rem",
+  header4: "1.2rem",
+  header5: "1.1rem",
+  paragraph: "1rem",
+  helperText: "0.8rem",
+  copyrightText: "0.7rem",
+};
 
 export const H1 = styled.h1`
   font-weight: bold;
-  font-size: 60px;
+  font-size: ${typeScale.header1};
 
   @media (max-width: 450px) {
     font-size: 34px;
