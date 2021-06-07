@@ -1,8 +1,6 @@
-# elizabeth
+# Elizabeth Design System
 
-Cosmetology CMS
-
-> Build with :heart:  by [santiagoenciso.com](https://santiagoenciso.com)
+> Built with :heart: &nbsp;by [santiagoenciso.com](https://santiagoenciso.com)
 
 ---
 
