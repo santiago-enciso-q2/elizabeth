@@ -14,26 +14,55 @@ import {
 const HeroSection = () => {
   return (
     <Wrapper>
-      <WaveBackground />
-      <ContentWrapper>
-        <TextWrapper>
-          <Title>
-            <span>Elizabeth</span> <br />
-            Design
-            <br />
-            System
-          </Title>
-          <PrimaryButton>Primary Button</PrimaryButton>
-          <SecondaryButton>Secondary Button</SecondaryButton>
-          <TertiaryButton>Tertiary Button</TertiaryButton>
-          <Description>Welcome to your new site.</Description>
-          <PurchaseButton
-            title="Start Learning"
-            subtitle="120+ hours of video"
-          />
-        </TextWrapper>
-        <MockupAnimation />
-      </ContentWrapper>
+      {" "}
+      <PrimaryButton modifiers={["small", "success", "primaryButtonSuccess"]}>
+        Hello world
+      </PrimaryButton>
+      <PrimaryButton modifiers={["warning", "primaryButtonWarning"]}>
+        Hello world
+      </PrimaryButton>
+      <PrimaryButton modifiers={["large", "error", "primaryButtonError"]}>
+        Hello world
+      </PrimaryButton>
+      <SecondaryButton
+        modifiers={["small", "success", "secondaryButtonSuccess"]}
+      >
+        Goodbye world
+      </SecondaryButton>
+      <SecondaryButton modifiers={["warning", "secondaryButtonWarning"]}>
+        Goodbye world
+      </SecondaryButton>
+      <SecondaryButton
+        modifiers={["large", "warning", "secondaryButtonWarning"]}
+      >
+        Goodbye world
+      </SecondaryButton>
+      <TertiaryButton modifiers={["error", "tertiaryButtonError"]}>
+        Hey world
+      </TertiaryButton>
+      <TertiaryButton modifiers={["error", "tertiaryButtonError"]}>
+        Hey world
+      </TertiaryButton>
+      <TertiaryButton modifiers={["error", "tertiaryButtonError"]}>
+        Hey world
+      </TertiaryButton>
+      {/*<WaveBackground />*/}
+      {/*<ContentWrapper>*/}
+      {/*  <TextWrapper>*/}
+      {/*    <Title>*/}
+      {/*      <span>Elizabeth</span> <br />*/}
+      {/*      Design*/}
+      {/*      <br />*/}
+      {/*      System*/}
+      {/*    </Title>*/}
+      {/*    <Description>Welcome to your new site.</Description>*/}
+      {/*    <PurchaseButton*/}
+      {/*      title="Start Learning"*/}
+      {/*      subtitle="120+ hours of video"*/}
+      {/*    />*/}
+      {/*  </TextWrapper>*/}
+      {/*  <MockupAnimation />*/}
+      {/*</ContentWrapper>*/}
     </Wrapper>
   );
 };
