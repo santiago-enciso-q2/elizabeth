@@ -40,6 +40,24 @@ export const themes = {
       disabled: `${colors.neutral300}`,
       textOnDisabled: `${colors.neutral100}`,
     },
+
+    status: {
+      warningColor: `${colors.warning100}`,
+      warningColorText: `${colors.primary100}`,
+      warningColorHover: `${colors.warning200}`,
+      warningColorActive: `${colors.warning300}`,
+
+      errorColor: `${colors.error100}`,
+      errorColorText: `${colors.neutral100}`,
+      errorColorHover: `${colors.error200}`,
+      errorColorActive: `${colors.error300}`,
+
+      successColor: `${colors.success100}`,
+      successColorText: `${colors.neutral100}`,
+      successColorHover: `${colors.success200}`,
+      successColorActive: `${colors.success300}`,
+    },
+
     card: {
       backgroundColor: `${colors.neutral400}`,
       boxShadow: `0px 50px 100px rgba(34, 79, 169, 0.3),
@@ -52,9 +70,6 @@ export const themes = {
     },
     pricingCard: {
       backgroundColor: `rgba(255, 255, 255, 0.3)`,
-    },
-    status: {
-      backgroundColor: "rgba(68, 66, 178, 0.1)",
     },
     modal: {
       backgroundColor: `rgba(255, 255, 255, 0.6)`,
