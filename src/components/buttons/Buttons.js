@@ -2,18 +2,98 @@ import React from "react";
 import styled from "styled-components";
 import { themes } from "../styles/ColorStyles";
 import { typeScale, primaryFont } from "../styles/TextStyles";
+import { applyStyleModifiers } from "styled-components-modifiers";
+
+const BUTTON_MODIFIERS = {
+  small: () => `
+    font-size: ${typeScale.helperText};
+    padding: auto 8px ;
+  `,
+  large: () => `
+    font-size: ${typeScale.header5};
+    padding: 16px 24px;
+  `,
+  warning: () => `
+    background-color: ${themes.light.status.warningColor};
+    color: ${themes.light.status.warningColorText};
+    border: none;
+    
+    &:hover, &:focus {
+      background-color: ${themes.light.warningColorHover};
+      outline: 3px solid ${themes.light.status.warningColorHover};
+      outline-offset: 2px;
+      border: 2px solid transparent;
+    }
+    
+    &:active {
+      background-color: ${themes.light.status.warningColorActive};
+    }
+  `,
+  primaryButtonWarning: () => `
+    background-color: ${themes.light.status.warningColor};
+    color: ${themes.light.status.warningColorText};
+  `,
+  secondaryButtonWarning: () => `
+    border: 2px solid ${themes.light.status.warningColor};
+    background: none;
+    color: ${themes.light.status.warningColor};
+  `,
+  error: () => `
+    background: none;
+    color: ${themes.light.status.errorColorText};
+    &:hover, &:focus {
+      background-color: ${themes.light.status.errorColorHover};
+      outline: 3px solid ${themes.light.status.errorColorHover};
+      outline-offset: 2px;
+      border: 2px solid transparent;
+    }
+    &:active {
+      background-color: ${themes.light.status.errorColorActive};
+    }
+  `,
+  primaryButtonError: () => `
+    background-color: ${themes.light.status.errorColor};
+    color: ${themes.light.status.errorColorText};
+  `,
+  secondaryButtonError: () => `
+    border: 2px solid ${themes.light.status.warningColor};
+  `,
+
+  tertiaryButtonError: () => `
+    border: none;
+    background: none;
+    color: ${themes.light.status.errorColor};
+  `,
+  success: () => `
+    background: none;
+    color: ${themes.light.status.successColorText};
+    &:hover, &:focus {
+      background-color: ${themes.light.status.successColorHover};
+      outline: 3px solid ${themes.light.status.successColorHover};
+      outline-offset: 2px;
+      border: 2px solid transparent;
+    }
+    &:active {
+      background-color: ${themes.light.status.successColorActive};
+    }
+  `,
+  primaryButtonSuccess: () => `
+    background-color: ${themes.light.status.successColor};
+    color: ${themes.light.status.successColorText};
+  `,
+  secondaryButtonSuccess: () => `
+    border: 2px solid ${themes.light.status.successColor};
+    color: ${themes.light.status.successColor};
+  `,
+};
 
 const Button = styled.button`
-  padding: 12px auto;
+  padding: 12px 24px;
   font-size: ${typeScale.paragraph};
   border-radius: 5px;
   min-width: 100px;
   cursor: pointer;
   font-family: ${primaryFont};
-  height: 50px;
-  width: 190px;
-  left: 271px;
-  top: 108px;
   border: none;
   *,
   & {
@@ -52,6 +132,7 @@ const PrimaryButton = styled(Button)`
     color: ${themes.light.button.textOnDisabled};
     background: ${themes.light.button.disabled};
   }
+  ${applyStyleModifiers(BUTTON_MODIFIERS)}
 `;
 
 const SecondaryButton = styled(Button)`
@@ -64,6 +145,7 @@ const SecondaryButton = styled(Button)`
     color: ${themes.light.button.disabled};
     background: ${themes.light.button.neutral100};
   }
+  ${applyStyleModifiers(BUTTON_MODIFIERS)}
 `;
 
 const TertiaryButton = styled(Button)`
@@ -75,6 +157,7 @@ const TertiaryButton = styled(Button)`
     color: ${themes.light.button.disabled};
     background: ${themes.light.button.neutral100};
   }
+  ${applyStyleModifiers(BUTTON_MODIFIERS)}
 `;
 
 export { PrimaryButton, SecondaryButton, TertiaryButton };
