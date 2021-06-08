@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
-import { H1, MediumText } from "../styles/TextStyles";
+import { H1, H2, MediumText } from "../styles/TextStyles";
 import { themes } from "../styles/ColorStyles";
 import PurchaseButton from "../buttons/PurchaseButton";
 import MockupAnimation from "../animations/MockupAnimation";
@@ -15,6 +15,14 @@ const HeroSection = () => {
   return (
     <Wrapper>
       {" "}
+      <hr />
+      <H1> Default Buttons</H1>
+      <PrimaryButton>One </PrimaryButton>
+      <SecondaryButton>Two</SecondaryButton>
+      <TertiaryButton>Three</TertiaryButton>
+      <hr />
+      <H1>Button Combinations</H1>
+      <p>Primary Buttons</p>
       <PrimaryButton modifiers={["small", "success", "primaryButtonSuccess"]}>
         Hello world
       </PrimaryButton>
@@ -24,6 +32,7 @@ const HeroSection = () => {
       <PrimaryButton modifiers={["large", "error", "primaryButtonError"]}>
         Hello world
       </PrimaryButton>
+      <p>Secondary Buttons</p>
       <SecondaryButton
         modifiers={["small", "success", "secondaryButtonSuccess"]}
       >
@@ -32,15 +41,14 @@ const HeroSection = () => {
       <SecondaryButton modifiers={["warning", "secondaryButtonWarning"]}>
         Goodbye world
       </SecondaryButton>
-      <SecondaryButton
-        modifiers={["large", "warning", "secondaryButtonWarning"]}
-      >
+      <SecondaryButton modifiers={["large", "error", "secondaryButtonError"]}>
         Goodbye world
       </SecondaryButton>
-      <TertiaryButton modifiers={["error", "tertiaryButtonError"]}>
+      <p>Tertiary Buttons</p>
+      <TertiaryButton modifiers={["success", "tertiaryButtonSuccess"]}>
         Hey world
       </TertiaryButton>
-      <TertiaryButton modifiers={["error", "tertiaryButtonError"]}>
+      <TertiaryButton modifiers={["warning", "tertiaryButtonWarning"]}>
         Hey world
       </TertiaryButton>
       <TertiaryButton modifiers={["error", "tertiaryButtonError"]}>
