@@ -80,29 +80,55 @@ export const themes = {
   },
   dark: {
     textPrimary: `${colors.neutral100}`,
-    textSecondary: `${colors.neutral200}`,
+    textSecondary: `${colors.primary100lightest}`,
     backgroundColor: `${colors.primary100}`,
-    card: {
-      backgroundColor: `${colors.primary100dark}`,
-      boxShadow: `0px 30px 60px rgba(0, 0, 0, 0.25),
-      inset 0 0 0 0.5px rgba(255, 255, 255, 0.2)`,
-      backgroundColorFull: `${colors.primary100}`,
-    },
-    cardHover: {
-      backgroundColor: `rgba(255, 255, 255, 0.1)`,
-      boxShadow: `inset 0px 0px 0px 0.5px rgba(255, 255, 255, 0.2)`,
-    },
-    pricingCard: {
-      backgroundColor: `rgba(31, 31, 71, 0.6)`,
+
+    button: {
+      primaryColor: `${colors.neutral100}`,
+      primaryHoverColor: `${colors.primary100dark}`,
+      primaryFocusColor: `${colors.primary100lightest}`,
+      primaryActiveColor: `${colors.primary100lighter}`,
+      textColorOnPrimary: `${colors.primary100}`,
+      textColor: `${colors.primary100dark}`,
+      textColorInverted: `${colors.primary100dark}`,
+      disabled: `${colors.neutral300}`,
+      textOnDisabled: `${colors.neutral100}`,
     },
     status: {
-      backgroundColor: "rgba(0, 0, 0, 0.2)",
+      warningColor: `${colors.warning100}`,
+      warningColorText: `${colors.primary100}`,
+      warningColorHover: `${colors.warning200}`,
+      warningColorActive: `${colors.warning300}`,
+
+      errorColor: `${colors.error100}`,
+      errorColorText: `${colors.neutral100}`,
+      errorColorHover: `${colors.error200}`,
+      errorColorActive: `${colors.error300}`,
+
+      successColor: `${colors.success100}`,
+      successColorText: `${colors.neutral100}`,
+      successColorHover: `${colors.success200}`,
+      successColorActive: `${colors.success300}`,
+    },
+
+    card: {
+      backgroundColor: `${colors.neutral400}`,
+      boxShadow: `0px 50px 100px rgba(34, 79, 169, 0.3),
+      inset 0 0 0 0.5px rgba(255, 255, 255, 0.6)`,
+      backgroundColorFull: `${colors.neutral100}`,
+    },
+    cardHover: {
+      backgroundColor: `rgba(68, 66, 178, 0.1)`,
+      boxShadow: `inset 0px 0px 0px 0.5px rgba(68, 66, 178, 0.2)`,
+    },
+    pricingCard: {
+      backgroundColor: `rgba(255, 255, 255, 0.3)`,
     },
     modal: {
-      backgroundColor: `rgba(50, 61, 109, 0.5)`,
-      boxShadow: `0px 50px 100px rgba(0, 0, 0, 0.25),
-      inset 0 0 0 0.5px rgba(255, 255, 255, 0.3)`,
-      backgroundColorFull: `${colors.primary100lighter}`,
+      backgroundColor: `rgba(255, 255, 255, 0.6)`,
+      boxShadow: `0px 50px 100px rgba(34, 79, 169, 0.3),
+      inset 0 0 0 0.5px rgba(255, 255, 255, 0.6)`,
+      backgroundColorFull: `rgba(255, 255, 255, 1)`,
     },
   },
 };
