@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled, { keyframes, ThemeProvider } from "styled-components";
-import { H1, H2, MediumText } from "../styles/TextStyles";
+import { H1, MediumText } from "../styles/TextStyles";
 import { themes } from "../styles/ColorStyles";
 import PurchaseButton from "../buttons/PurchaseButton";
 import MockupAnimation from "../animations/MockupAnimation";
@@ -20,18 +20,12 @@ const HeroSection = () => {
     <ThemeProvider theme={useDarkTheme ? themes.dark : themes.light}>
       <Wrapper>
         {" "}
-        <button
-          style={{ margin: "0 16px 24px", padding: "8px", background: "none" }}
-          onClick={() => setUseDarkTheme(true)}
-        >
+        <PrimaryButton onClick={() => setUseDarkTheme(true)}>
           Dark Theme
-        </button>
-        <button
-          style={{ margin: "0 16px 24px", padding: "8px", background: "none" }}
-          onClick={() => setUseDarkTheme(false)}
-        >
+        </PrimaryButton>
+        <SecondaryButton onClick={() => setUseDarkTheme(false)}>
           Default Theme
-        </button>
+        </SecondaryButton>
         <div
           style={{
             width: "100vw",
