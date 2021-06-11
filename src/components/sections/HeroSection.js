@@ -1,5 +1,5 @@
-import React from "react";
-import styled, { keyframes } from "styled-components";
+import React, { useState } from "react";
+import styled, { keyframes, ThemeProvider } from "styled-components";
 import { H1, H2, MediumText } from "../styles/TextStyles";
 import { themes } from "../styles/ColorStyles";
 import PurchaseButton from "../buttons/PurchaseButton";
@@ -12,66 +12,94 @@ import {
 } from "../buttons/Buttons";
 
 const HeroSection = () => {
+  {
+    /* useDarkTheme hook only affects the hero section. Move up the component hierarchy to use globally */
+  }
+  const [useDarkTheme, setUseDarkTheme] = useState(false);
   return (
-    <Wrapper>
-      {" "}
-      <hr />
-      <H1> Default Buttons</H1>
-      <PrimaryButton>One </PrimaryButton>
-      <SecondaryButton>Two</SecondaryButton>
-      <TertiaryButton>Three</TertiaryButton>
-      <hr />
-      <H1>Button Combinations</H1>
-      <p>Primary Buttons</p>
-      <PrimaryButton modifiers={["small", "success", "primaryButtonSuccess"]}>
-        Hello world
-      </PrimaryButton>
-      <PrimaryButton modifiers={["warning", "primaryButtonWarning"]}>
-        Hello world
-      </PrimaryButton>
-      <PrimaryButton modifiers={["large", "error", "primaryButtonError"]}>
-        Hello world
-      </PrimaryButton>
-      <p>Secondary Buttons</p>
-      <SecondaryButton
-        modifiers={["small", "success", "secondaryButtonSuccess"]}
-      >
-        Goodbye world
-      </SecondaryButton>
-      <SecondaryButton modifiers={["warning", "secondaryButtonWarning"]}>
-        Goodbye world
-      </SecondaryButton>
-      <SecondaryButton modifiers={["large", "error", "secondaryButtonError"]}>
-        Goodbye world
-      </SecondaryButton>
-      <p>Tertiary Buttons</p>
-      <TertiaryButton modifiers={["success", "tertiaryButtonSuccess"]}>
-        Hey world
-      </TertiaryButton>
-      <TertiaryButton modifiers={["warning", "tertiaryButtonWarning"]}>
-        Hey world
-      </TertiaryButton>
-      <TertiaryButton modifiers={["error", "tertiaryButtonError"]}>
-        Hey world
-      </TertiaryButton>
-      {/*<WaveBackground />*/}
-      {/*<ContentWrapper>*/}
-      {/*  <TextWrapper>*/}
-      {/*    <Title>*/}
-      {/*      <span>Elizabeth</span> <br />*/}
-      {/*      Design*/}
-      {/*      <br />*/}
-      {/*      System*/}
-      {/*    </Title>*/}
-      {/*    <Description>Welcome to your new site.</Description>*/}
-      {/*    <PurchaseButton*/}
-      {/*      title="Start Learning"*/}
-      {/*      subtitle="120+ hours of video"*/}
-      {/*    />*/}
-      {/*  </TextWrapper>*/}
-      {/*  <MockupAnimation />*/}
-      {/*</ContentWrapper>*/}
-    </Wrapper>
+    <ThemeProvider theme={useDarkTheme ? themes.dark : themes.light}>
+      <Wrapper>
+        {" "}
+        <button
+          style={{ margin: "0 16px 24px", padding: "8px", background: "none" }}
+          onClick={() => setUseDarkTheme(true)}
+        >
+          Dark Theme
+        </button>
+        <button
+          style={{ margin: "0 16px 24px", padding: "8px", background: "none" }}
+          onClick={() => setUseDarkTheme(false)}
+        >
+          Default Theme
+        </button>
+        <div
+          style={{
+            width: "100vw",
+            height: "45vh",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-around",
+          }}
+        >
+          {" "}
+          <H1> Default Buttons</H1>
+          <PrimaryButton>One </PrimaryButton>
+          <SecondaryButton>Two</SecondaryButton>
+          <TertiaryButton>Three</TertiaryButton>
+        </div>
+        <hr />
+        <H1>Button Combinations</H1>
+        <p>Primary Buttons</p>
+        <PrimaryButton modifiers={["small", "success", "primaryButtonSuccess"]}>
+          Hello world
+        </PrimaryButton>
+        <PrimaryButton modifiers={["warning", "primaryButtonWarning"]}>
+          Hello world
+        </PrimaryButton>
+        <PrimaryButton modifiers={["large", "error", "primaryButtonError"]}>
+          Hello world
+        </PrimaryButton>
+        <p>Secondary Buttons</p>
+        <SecondaryButton
+          modifiers={["small", "success", "secondaryButtonSuccess"]}
+        >
+          Goodbye world
+        </SecondaryButton>
+        <SecondaryButton modifiers={["warning", "secondaryButtonWarning"]}>
+          Goodbye world
+        </SecondaryButton>
+        <SecondaryButton modifiers={["large", "error", "secondaryButtonError"]}>
+          Goodbye world
+        </SecondaryButton>
+        <p>Tertiary Buttons</p>
+        <TertiaryButton modifiers={["success", "tertiaryButtonSuccess"]}>
+          Hey world
+        </TertiaryButton>
+        <TertiaryButton modifiers={["warning", "tertiaryButtonWarning"]}>
+          Hey world
+        </TertiaryButton>
+        <TertiaryButton modifiers={["error", "tertiaryButtonError"]}>
+          Hey world
+        </TertiaryButton>
+        {/*<WaveBackground />*/}
+        {/*<ContentWrapper>*/}
+        {/*  <TextWrapper>*/}
+        {/*    <Title>*/}
+        {/*      <span>Elizabeth</span> <br />*/}
+        {/*      Design*/}
+        {/*      <br />*/}
+        {/*      System*/}
+        {/*    </Title>*/}
+        {/*    <Description>Welcome to your new site.</Description>*/}
+        {/*    <PurchaseButton*/}
+        {/*      title="Start Learning"*/}
+        {/*      subtitle="120+ hours of video"*/}
+        {/*    />*/}
+        {/*  </TextWrapper>*/}
+        {/*  <MockupAnimation />*/}
+        {/*</ContentWrapper>*/}
+      </Wrapper>
+    </ThemeProvider>
   );
 };
 export default HeroSection;
@@ -85,6 +113,7 @@ const Wrapper = styled.div`
   overflow: hidden;
   /* height added to prevent mockups from getting clipped at the bottom*/
   height: 800px;
+  background: ${(props) => props.theme.backgroundColor}; ;
 `;
 
 const ContentWrapper = styled.div`
