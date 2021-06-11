@@ -18,7 +18,6 @@ const BUTTON_MODIFIERS = {
     color: ${theme.status.errorColorText};
     &:hover, &:focus {
       background-color: ${theme.status.errorColorHover};
-      outline: 3px solid ${theme.status.errorColorHover};
       outline-offset: 2px;
       border: 2px solid transparent;
     }
@@ -31,7 +30,6 @@ const BUTTON_MODIFIERS = {
     color: ${theme.status.warningColorText};
     &:hover, &:focus {
       background-color: ${theme.warningColorHover};
-      outline: 3px solid ${theme.status.warningColorHover};
       outline-offset: 2px;
       border: 2px solid transparent;
     }
@@ -45,7 +43,6 @@ const BUTTON_MODIFIERS = {
     color: ${theme.status.successColorText};
     &:hover, &:focus {
       background-color: ${theme.status.successColorHover};
-      outline: 3px solid ${theme.status.successColorHover};
       outline-offset: 2px;
       border: 2px solid transparent;
     }
@@ -104,6 +101,8 @@ const Button = styled.button`
   cursor: pointer;
   font-family: ${primaryFont};
   border: none;
+  /* border-box not working in secondary button */
+  box-sizing: border-box;
   *,
   & {
     transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -116,7 +115,7 @@ const Button = styled.button`
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1),
       0px 30px 60px rgba(23, 0, 102, 0.5),
       inset 0px 0px 0px 0.5px rgba(255, 255, 255, 0.5);
-    transform: translateY(-3px);
+    transform: translateY(-1px);
   }
 
   &:focus {
@@ -145,9 +144,15 @@ const PrimaryButton = styled(Button)`
 `;
 
 const SecondaryButton = styled(Button)`
+  padding: 10px 22px;
   background: none;
-  border: solid 5px ${(props) => props.theme.button.primaryColor};
-  color: ${(props) => props.theme.textColorOnPrimary};
+  outline-offset: 2px;
+  border: 2px solid ${(props) => props.theme.button.primaryColor};
+  color: ${(props) => props.theme.button.primaryColor};
+
+  &:hover {
+    padding: 12px 24px;
+  }
 
   &:disabled {
     border: ${(props) => props.theme.button.disabled} solid 5px;
