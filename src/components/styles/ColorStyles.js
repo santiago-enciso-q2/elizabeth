@@ -28,7 +28,8 @@ export const themes = {
     textPrimary: `${colors.neutral100}`,
     textSecondary: `${colors.primary200}`,
     backgroundColor: `${colors.neutral100}`,
-
+    formElementBackground: `${colors.neutral100}`,
+    textOnFormElementBackground: `${colors.neutral500}`,
     button: {
       primaryColor: `${colors.primary100}`,
       primaryHoverColor: `${colors.primary100dark}`,
@@ -40,7 +41,6 @@ export const themes = {
       disabled: `${colors.neutral300}`,
       textOnDisabled: `${colors.neutral100}`,
     },
-
     status: {
       warningColor: `${colors.warning100}`,
       warningColorText: `${colors.primary100}`,
@@ -57,7 +57,6 @@ export const themes = {
       successColorHover: `${colors.success200}`,
       successColorActive: `${colors.success300}`,
     },
-
     card: {
       backgroundColor: `${colors.neutral400}`,
       boxShadow: `0px 50px 100px rgba(34, 79, 169, 0.3),
@@ -82,7 +81,8 @@ export const themes = {
     textPrimary: `${colors.neutral100}`,
     textSecondary: `${colors.neutral600}`,
     backgroundColor: `${colors.primary100dark}`,
-
+    formElementBackground: `${colors.neutral500}`,
+    textOnFormElementBackground: `${colors.primary100lightest}`,
     button: {
       primaryColor: `${colors.neutral600}`,
       primaryHoverColor: `${colors.neutral600}`,
@@ -110,7 +110,6 @@ export const themes = {
       successColorHover: `${colors.success200}`,
       successColorActive: `${colors.success300}`,
     },
-
     card: {
       backgroundColor: `${colors.neutral400}`,
       boxShadow: `0px 50px 100px rgba(34, 79, 169, 0.3),
