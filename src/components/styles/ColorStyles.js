@@ -11,7 +11,7 @@ export const colors = {
   neutral300: `rgba(133, 133, 133, 1)`,
   neutral400: `rgba(92, 92, 92, 0.6)`,
   neutral500: `rgba(51, 51, 51, 1)`,
-  neutral600: `rgba(0, 0, 0, 0.7)`,
+  neutral600: `rgba(0, 0, 0, 1)`,
   success100: `rgba(23, 163, 152, 1)`,
   success200: `rgba(18, 125, 116, 1)`,
   success300: `rgba(13, 89, 83, 1)`,
@@ -25,7 +25,7 @@ export const colors = {
 
 export const themes = {
   light: {
-    textPrimary: `${colors.primary100}`,
+    textPrimary: `${colors.neutral100}`,
     textSecondary: `${colors.primary200}`,
     backgroundColor: `${colors.neutral100}`,
 
@@ -80,16 +80,16 @@ export const themes = {
   },
   dark: {
     textPrimary: `${colors.neutral100}`,
-    textSecondary: `${colors.primary100lightest}`,
-    backgroundColor: `${colors.primary100}`,
+    textSecondary: `${colors.neutral600}`,
+    backgroundColor: `${colors.primary100dark}`,
 
     button: {
-      primaryColor: `${colors.neutral100}`,
-      primaryHoverColor: `${colors.primary100dark}`,
+      primaryColor: `${colors.neutral600}`,
+      primaryHoverColor: `${colors.neutral600}`,
       primaryFocusColor: `${colors.primary100lightest}`,
       primaryActiveColor: `${colors.primary100lighter}`,
       textColorOnPrimary: `${colors.primary100}`,
-      textColor: `${colors.primary100dark}`,
+      textColor: `${colors.neutral100}`,
       textColorInverted: `${colors.primary100dark}`,
       disabled: `${colors.neutral300}`,
       textOnDisabled: `${colors.neutral100}`,
