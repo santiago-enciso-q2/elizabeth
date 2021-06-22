@@ -10,6 +10,7 @@ import {
   SecondaryButton,
   TertiaryButton,
 } from "../buttons/Buttons";
+import { SignUpModal } from "./Modal";
 
 const HeroSection = () => {
   {
@@ -75,6 +76,9 @@ const HeroSection = () => {
         <TertiaryButton modifiers={["error", "tertiaryButtonError"]}>
           Hey world
         </TertiaryButton>
+        <hr />
+        <H1>Modals</H1>
+        <SignUpModal />
         {/*<WaveBackground />*/}
         {/*<ContentWrapper>*/}
         {/*  <TextWrapper>*/}
@@ -106,7 +110,7 @@ const animation = keyframes`
 const Wrapper = styled.div`
   overflow: hidden;
   /* height added to prevent mockups from getting clipped at the bottom*/
-  height: 800px;
+  //height: ;
   background: ${(props) => props.theme.backgroundColor}; ;
 `;
 
