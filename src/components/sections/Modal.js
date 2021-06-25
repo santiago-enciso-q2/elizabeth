@@ -1,10 +1,11 @@
+
 import React from "react";
 import styled from "styled-components";
-import { themes } from "../styles/ColorStyles";
 import { typeScale } from "../styles/TextStyles";
 import IllustrationSignUp from "../../static/images/illustrations/makeup-artist.svg";
 import { CloseIcon } from "../../static/images/icons/close";
 import { PrimaryButton } from "../buttons/Buttons";
+import { useSpring, animated, config } from "react-spring";
 
 const ModalWrapper = styled.div`
   width: 800px;
@@ -42,20 +43,27 @@ const CloseModalButton = styled.button`
   padding: 0;
 `;
 
-export const SignUpModal = () => {
-  return (
-    <ModalWrapper>
-      <img
-        src={IllustrationSignUp}
-        alt="Sign up for an account"
-        aria-hidden="true"
-      />
-      <SignUpHeader>Sign Up</SignUpHeader>
-      <SignUpText>Sign up today to get access to cool things!</SignUpText>
-      <PrimaryButton>Sign Up!</PrimaryButton>
-      <CloseModalButton aria-label="Close modal">
-        <CloseIcon />
-      </CloseModalButton>
-    </ModalWrapper>
-  );
+export const SignUpModal = ({ showModal, setShowModal }) => {
+    const animation = useSpring({
+        opacity: showModal ? 1 : 0,
+        transform: showModal ? `translateY(0)` : `translateY(-200%)`,
+        config: config.slow,
+    });
+    return (
+        <animated.div style={animation}>
+            <ModalWrapper>
+                <img
+                    src={IllustrationSignUp}
+                    alt="Sign up for an account"
+                    aria-hidden="true"
+                />
+                <SignUpHeader>Sign Up</SignUpHeader>
+                <SignUpText>Sign up today to get access to cool things!</SignUpText>
+                <PrimaryButton>Sign Up!</PrimaryButton>
+                <CloseModalButton aria-label="Close modal">
+                    <CloseIcon />
+                </CloseModalButton>
+            </ModalWrapper>
+        </animated.div>
+    );
 };
