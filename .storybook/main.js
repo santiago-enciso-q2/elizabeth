@@ -13,6 +13,7 @@ module.exports = {
     },
     "@storybook/addon-essentials",
     "@storybook/addon-contexts/register",
-    "@storybook/addon-backgrounds/register"
+    "@storybook/addon-backgrounds/register",
+    "@storybook/addon-knobs"
   ]
 }
