@@ -49,6 +49,7 @@ export const SignUpModal = ({ showModal, setShowModal }) => {
         transform: showModal ? `translateY(0)` : `translateY(-200%)`,
         config: config.slow,
     });
+
     return (
         <animated.div style={animation}>
             <ModalWrapper>
