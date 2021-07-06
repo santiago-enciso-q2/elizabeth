@@ -21,7 +21,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "format" : "prettier --format \"scr/**/*.{js,jsx}\""
+    "format": "prettier --write \"src/**/*.{js,jsx}\""
   },
   "eslintConfig": {
     "extends": [

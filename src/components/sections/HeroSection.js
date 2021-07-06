@@ -18,95 +18,95 @@ const HeroSection = () => {
   const [useDarkTheme, setUseDarkTheme] = useState(false);
   const [showModal, setShowModal] = useState(false);
   return (
-      <ThemeProvider theme={useDarkTheme ? themes.dark : themes.light}>
-        <Wrapper>
+    <ThemeProvider theme={useDarkTheme ? themes.dark : themes.light}>
+      <Wrapper>
+        {" "}
+        <PrimaryButton onClick={() => setUseDarkTheme(true)}>
+          Dark Theme
+        </PrimaryButton>
+        <SecondaryButton onClick={() => setUseDarkTheme(false)}>
+          Default Theme
+        </SecondaryButton>
+        <div
+          style={{
+            width: "100vw",
+            height: "45vh",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-around",
+          }}
+        >
           {" "}
-          <PrimaryButton onClick={() => setUseDarkTheme(true)}>
-            Dark Theme
-          </PrimaryButton>
-          <SecondaryButton onClick={() => setUseDarkTheme(false)}>
-            Default Theme
-          </SecondaryButton>
-          <div
-              style={{
-                width: "100vw",
-                height: "45vh",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "space-around",
-              }}
-          >
-            {" "}
-            <H1> Default Buttons</H1>
-            <PrimaryButton>One </PrimaryButton>
-            <SecondaryButton>Two</SecondaryButton>
-            <TertiaryButton>Three</TertiaryButton>
-          </div>
-          <hr />
-          <H1>Button Combinations</H1>
-          <p>Primary Buttons</p>
-          <PrimaryButton modifiers={["small", "success", "primaryButtonSuccess"]}>
-            Hello world
-          </PrimaryButton>
-          <PrimaryButton modifiers={["warning", "primaryButtonWarning"]}>
-            Hello world
-          </PrimaryButton>
-          <PrimaryButton modifiers={["large", "error", "primaryButtonError"]}>
-            Hello world
-          </PrimaryButton>
-          <p>Secondary Buttons</p>
-          <SecondaryButton
-              modifiers={["small", "success", "secondaryButtonSuccess"]}
-          >
-            Goodbye world
-          </SecondaryButton>
-          <SecondaryButton modifiers={["warning", "secondaryButtonWarning"]}>
-            Goodbye world
-          </SecondaryButton>
-          <SecondaryButton modifiers={["large", "error", "secondaryButtonError"]}>
-            Goodbye world
-          </SecondaryButton>
-          <p>Tertiary Buttons</p>
-          <TertiaryButton modifiers={["success", "tertiaryButtonSuccess"]}>
-            Hey world
-          </TertiaryButton>
-          <TertiaryButton modifiers={["warning", "tertiaryButtonWarning"]}>
-            Hey world
-          </TertiaryButton>
-          <TertiaryButton modifiers={["error", "tertiaryButtonError"]}>
-            Hey world
-          </TertiaryButton>
-          <hr />
-          <H1>Modals</H1>
-          <PrimaryButton onClick={() => setShowModal(!showModal)}>
-            Toggle Modal
-          </PrimaryButton>
-          <SignUpModal showModal={showModal} setShowModal={setShowModal} />
-          <hr />
-          <H1>Animations</H1>
-          <FadeIn />
-          <hr />
-          {/*<H1>More Animations</H1>*/}
-          {/*<EmojiCarousel />*/}
-          {/*<WaveBackground />*/}
-          {/*<ContentWrapper>*/}
-          {/*  <TextWrapper>*/}
-          {/*    <Title>*/}
-          {/*      <span>Elizabeth</span> <br />*/}
-          {/*      Design*/}
-          {/*      <br />*/}
-          {/*      System*/}
-          {/*    </Title>*/}
-          {/*    <Description>Welcome to your new site.</Description>*/}
-          {/*    <PurchaseButton*/}
-          {/*      title="Start Learning"*/}
-          {/*      subtitle="120+ hours of video"*/}
-          {/*    />*/}
-          {/*  </TextWrapper>*/}
-          {/*  <MockupAnimation />*/}
-          {/*</ContentWrapper>*/}
-        </Wrapper>
-      </ThemeProvider>
+          <H1> Default Buttons</H1>
+          <PrimaryButton>One </PrimaryButton>
+          <SecondaryButton>Two</SecondaryButton>
+          <TertiaryButton>Three</TertiaryButton>
+        </div>
+        <hr />
+        <H1>Button Combinations</H1>
+        <p>Primary Buttons</p>
+        <PrimaryButton modifiers={["small", "success", "primaryButtonSuccess"]}>
+          Hello world
+        </PrimaryButton>
+        <PrimaryButton modifiers={["warning", "primaryButtonWarning"]}>
+          Hello world
+        </PrimaryButton>
+        <PrimaryButton modifiers={["large", "error", "primaryButtonError"]}>
+          Hello world
+        </PrimaryButton>
+        <p>Secondary Buttons</p>
+        <SecondaryButton
+          modifiers={["small", "success", "secondaryButtonSuccess"]}
+        >
+          Goodbye world
+        </SecondaryButton>
+        <SecondaryButton modifiers={["warning", "secondaryButtonWarning"]}>
+          Goodbye world
+        </SecondaryButton>
+        <SecondaryButton modifiers={["large", "error", "secondaryButtonError"]}>
+          Goodbye world
+        </SecondaryButton>
+        <p>Tertiary Buttons</p>
+        <TertiaryButton modifiers={["success", "tertiaryButtonSuccess"]}>
+          Hey world
+        </TertiaryButton>
+        <TertiaryButton modifiers={["warning", "tertiaryButtonWarning"]}>
+          Hey world
+        </TertiaryButton>
+        <TertiaryButton modifiers={["error", "tertiaryButtonError"]}>
+          Hey world
+        </TertiaryButton>
+        <hr />
+        <H1>Modals</H1>
+        <PrimaryButton onClick={() => setShowModal(!showModal)}>
+          Toggle Modal
+        </PrimaryButton>
+        <SignUpModal showModal={showModal} setShowModal={setShowModal} />
+        <hr />
+        <H1>Animations</H1>
+        <FadeIn />
+        <hr />
+        {/*<H1>More Animations</H1>*/}
+        {/*<EmojiCarousel />*/}
+        {/*<WaveBackground />*/}
+        {/*<ContentWrapper>*/}
+        {/*  <TextWrapper>*/}
+        {/*    <Title>*/}
+        {/*      <span>Elizabeth</span> <br />*/}
+        {/*      Design*/}
+        {/*      <br />*/}
+        {/*      System*/}
+        {/*    </Title>*/}
+        {/*    <Description>Welcome to your new site.</Description>*/}
+        {/*    <PurchaseButton*/}
+        {/*      title="Start Learning"*/}
+        {/*      subtitle="120+ hours of video"*/}
+        {/*    />*/}
+        {/*  </TextWrapper>*/}
+        {/*  <MockupAnimation />*/}
+        {/*</ContentWrapper>*/}
+      </Wrapper>
+    </ThemeProvider>
   );
 };
 export default HeroSection;
