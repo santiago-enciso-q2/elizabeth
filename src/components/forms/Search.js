@@ -1,14 +1,19 @@
-import { useState} from "react";
+import {useState} from "react";
 
-const Search = () => {
-    const [location, setLocation] = useState("Austin, TX")
+const Search = ({id, labelText, initialValue}) => {
+    const [inputValue, updateInputValue] = useState(initialValue)
 
     return (
         <div>
             <form>
-                <label>
-                    Location
-                    <input id="location"  value={location} onChange={e => setLocation(e.target.value)} placeholder="Location" />
+                <label htmlFor={id}>
+                    {labelText}
+                    <input
+                        id={id}
+                        value={inputValue}
+                        placeholder={initialValue}
+                        onChange={(e) => updateInputValue(e.target.value)}
+                        onClick={(e) => updateInputValue("")}/>
                 </label>
                 <button>Submit</button>
             </form>
@@ -17,3 +22,4 @@ const Search = () => {
 }
 
 export default Search
+
