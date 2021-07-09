@@ -1,6 +1,5 @@
-import React from "react";
 import styled from "styled-components";
-import { typeScale, primaryFont } from "../styles/TextStyles";
+import { typeScale, primaryFont } from "../styles";
 import { applyStyleModifiers } from "styled-components-modifiers";
 
 const BUTTON_MODIFIERS = {
