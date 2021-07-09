@@ -5,6 +5,7 @@ import { themes } from "../components/styles";
 import { H1} from "../components/styles";
 import { SignUpModal } from "../components/sections/Modal";
 import FadeIn from "../components/animations/FadeIn";
+import Search from "../components/forms/Search";
 
 import {
     PrimaryButton,
@@ -12,14 +13,15 @@ import {
     TertiaryButton,
 } from "../components/buttons/Buttons";
 
-
 function IndexPage() {
     const [useDarkTheme, setUseDarkTheme] = useState(false);
     const [showModal, setShowModal] = useState(false);
     return (
         <ThemeProvider theme={useDarkTheme ? themes.dark : themes.light}>
             <Layout>
-
+                <H1>Search Params</H1>
+                <Search/>
+                <hr />
                 {" "}
                 <PrimaryButton onClick={() => setUseDarkTheme(true)}>
                     Dark Theme
