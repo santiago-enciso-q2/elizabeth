@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled, { keyframes } from "styled-components";
-import { H1, MediumText } from "../styles/TextStyles";
+import { H1, MediumText } from "../styles";
 import { themes } from "../styles";
 import PurchaseButton from "../buttons/PurchaseButton";
 import MockupAnimation from "../animations/MockupAnimation";

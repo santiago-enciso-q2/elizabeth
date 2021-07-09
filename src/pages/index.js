@@ -1,9 +1,8 @@
 import Layout from "../components/layout/layout";
-import React, { useState } from "react";
-import { ThemeProvider} from "styled-components";
-import { themes } from "../components/styles";
-import { H1} from "../components/styles";
-import { SignUpModal } from "../components/sections/Modal";
+import React, {useState} from "react";
+import {themes} from "../components/styles";
+import {H1} from "../components/styles";
+import {SignUpModal} from "../components/sections/Modal";
 import FadeIn from "../components/animations/FadeIn";
 import Search from "../components/forms/Search";
 
@@ -12,6 +11,7 @@ import {
     SecondaryButton,
     TertiaryButton,
 } from "../components/buttons/Buttons";
+import {ThemeProvider} from "styled-components";
 
 function IndexPage() {
     const [useDarkTheme, setUseDarkTheme] = useState(false);
@@ -20,12 +20,9 @@ function IndexPage() {
         <ThemeProvider theme={useDarkTheme ? themes.dark : themes.light}>
             <Layout>
                 <H1>Search Params</H1>
-                <Search/>
-                <hr />
-                {" "}
-                <PrimaryButton onClick={() => setUseDarkTheme(true)}>
-                    Dark Theme
-                </PrimaryButton>
+                <Search id="location" labelText="Location " initialValue="Austin, TX"/>
+                <hr/>
+                <PrimaryButton onClick={() => setUseDarkTheme(true)}>Dark Theme</PrimaryButton>
                 <SecondaryButton onClick={() => setUseDarkTheme(false)}>
                     Default Theme
                 </SecondaryButton>
@@ -44,7 +41,7 @@ function IndexPage() {
                     <SecondaryButton>Two</SecondaryButton>
                     <TertiaryButton>Three</TertiaryButton>
                 </div>
-                <hr />
+                <hr/>
                 <H1>Button Combinations</H1>
                 <p>Primary Buttons</p>
                 <PrimaryButton modifiers={["small", "success", "primaryButtonSuccess"]}>
@@ -78,16 +75,17 @@ function IndexPage() {
                 <TertiaryButton modifiers={["error", "tertiaryButtonError"]}>
                     Hey world
                 </TertiaryButton>
-                <hr />
+                <hr/>
                 <H1>Modals</H1>
-                <PrimaryButton onClick={() => setShowModal(!showModal)}>
-                    Toggle Modal
-                </PrimaryButton>
-                <SignUpModal showModal={showModal} setShowModal={setShowModal} />
-                <hr />
+                 {/*This is Breaking all the other buttons 👇*/}
+                {/*<PrimaryButton onClick={() => setShowModal(!showModal)}>*/}
+                {/*    Toggle Modal*/}
+                {/*</PrimaryButton>*/}
+                {/*<SignUpModal showModal={showModal} setShowModal={setShowModal}/>*/}
+                <hr/>
                 <H1>Animations</H1>
-                <FadeIn />
-                <hr />
+                <FadeIn/>
+                <hr/>
             </Layout>
         </ThemeProvider>
 

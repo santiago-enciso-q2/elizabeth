@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Caption2, SmallText } from "../styles/TextStyles";
+import { Caption2, SmallText } from "../styles/Typography";
 import { Link } from "react-router-dom";
 import image from "../../static/images/icons/credit.svg";
 import ring from "../../static/images/icons/icon-ring.svg";

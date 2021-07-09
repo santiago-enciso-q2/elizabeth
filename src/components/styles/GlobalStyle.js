@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 import { themes, themes as theme } from "./ColorStyles";
 import { normalize } from "polished";
-import { primaryFont } from "./TextStyles";
+import { primaryFont } from "./Typography";
 
 export const GlobalStyle = createGlobalStyle`
   
