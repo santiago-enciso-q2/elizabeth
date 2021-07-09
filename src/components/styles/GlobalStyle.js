@@ -12,7 +12,7 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     line-height: 1;
-    font-family: Nunito, monospace;
+    font-family: ${primaryFont};
     font-size: 16px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
