@@ -76,13 +76,6 @@ function IndexPage() {
                     Hey world
                 </TertiaryButton>
                 <hr/>
-                <H1>Modals</H1>
-                 {/*This is Breaking all the other buttons 👇*/}
-                {/*<PrimaryButton onClick={() => setShowModal(!showModal)}>*/}
-                {/*    Toggle Modal*/}
-                {/*</PrimaryButton>*/}
-                {/*<SignUpModal showModal={showModal} setShowModal={setShowModal}/>*/}
-                <hr/>
                 <H1>Animations</H1>
                 <FadeIn/>
                 <hr/>
