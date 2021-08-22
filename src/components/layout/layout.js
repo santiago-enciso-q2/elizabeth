@@ -5,7 +5,6 @@ function Layout({ children }) {
   return (
     <>
       <GlobalStyle />
-
       <main>{children}</main>
     </>
   );

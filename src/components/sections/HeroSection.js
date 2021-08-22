@@ -1,36 +1,111 @@
 import React, { useState } from "react";
-import styled, { keyframes } from "styled-components";
-import { H1, MediumText } from "../styles";
+import styled, { keyframes, ThemeProvider } from "styled-components";
+import { H1, Paragraph } from "../styles";
 import { themes } from "../styles";
 import PurchaseButton from "../buttons/PurchaseButton";
 import MockupAnimation from "../animations/MockupAnimation";
 import WaveBackground from "../backgrounds/WaveBackground";
-
+import {
+  PrimaryButton,
+  SecondaryButton,
+  TertiaryButton,
+} from "../buttons/Buttons";
+import { SignUpModal } from "./Modal";
+import FadeIn from "../animations/FadeIn";
 
 const HeroSection = () => {
   /* useDarkTheme hook only affects the hero section. Move up the component hierarchy to use globally */
+  const [useDarkTheme, setUseDarkTheme] = useState(false);
+  const [showModal, setShowModal] = useState(false);
   return (
-
-      <Wrapper>
-        <H1>More Animations</H1>
-        <WaveBackground />
-        <ContentWrapper>
-          <TextWrapper>
-            <Title>
-              <span>Elizabeth</span> <br />
-              Design
-              <br />
-              System
-            </Title>
-            <Description>Welcome to your new site.</Description>
-            <PurchaseButton
-              title="Start Learning"
-              subtitle="120+ hours of video"
-            />
-          </TextWrapper>
-          <MockupAnimation />
-        </ContentWrapper>
-      </Wrapper>
+      <ThemeProvider theme={useDarkTheme ? themes.dark : themes.light}>
+        <Wrapper>
+          {" "}
+          <PrimaryButton onClick={() => setUseDarkTheme(true)}>
+            Dark Theme
+          </PrimaryButton>
+          <SecondaryButton onClick={() => setUseDarkTheme(false)}>
+            Default Theme
+          </SecondaryButton>
+          <div
+              style={{
+                width: "100vw",
+                height: "45vh",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-around",
+              }}
+          >
+            {" "}
+            <H1> Default Buttons</H1>
+            <PrimaryButton>One </PrimaryButton>
+            <SecondaryButton>Two</SecondaryButton>
+            <TertiaryButton>Three</TertiaryButton>
+          </div>
+          <hr />
+          <H1>Button Combinations</H1>
+          <p>Primary Buttons</p>
+          <PrimaryButton modifiers={["small", "success", "primaryButtonSuccess"]}>
+            Hello world
+          </PrimaryButton>
+          <PrimaryButton modifiers={["warning", "primaryButtonWarning"]}>
+            Hello world
+          </PrimaryButton>
+          <PrimaryButton modifiers={["large", "error", "primaryButtonError"]}>
+            Hello world
+          </PrimaryButton>
+          <p>Secondary Buttons</p>
+          <SecondaryButton
+              modifiers={["small", "success", "secondaryButtonSuccess"]}
+          >
+            Goodbye world
+          </SecondaryButton>
+          <SecondaryButton modifiers={["warning", "secondaryButtonWarning"]}>
+            Goodbye world
+          </SecondaryButton>
+          <SecondaryButton modifiers={["large", "error", "secondaryButtonError"]}>
+            Goodbye world
+          </SecondaryButton>
+          <p>Tertiary Buttons</p>
+          <TertiaryButton modifiers={["success", "tertiaryButtonSuccess"]}>
+            Hey world
+          </TertiaryButton>
+          <TertiaryButton modifiers={["warning", "tertiaryButtonWarning"]}>
+            Hey world
+          </TertiaryButton>
+          <TertiaryButton modifiers={["error", "tertiaryButtonError"]}>
+            Hey world
+          </TertiaryButton>
+          <hr />
+          <H1>Modals</H1>
+          <PrimaryButton onClick={() => setShowModal(!showModal)}>
+            Toggle Modal
+          </PrimaryButton>
+          <SignUpModal showModal={showModal} setShowModal={setShowModal} />
+          <hr />
+          <H1>Animations</H1>
+          <FadeIn />
+          <hr />
+          <H1>More Animations</H1>
+          <WaveBackground />
+          <ContentWrapper>
+            <TextWrapper>
+              <Title>
+                <span>Elizabeth</span> <br />
+                Design
+                <br />
+                System
+              </Title>
+              <Description>Welcome to your new site.</Description>
+              <PurchaseButton
+                title="Start Learning"
+                subtitle="120+ hours of video"
+              />
+            </TextWrapper>
+            <MockupAnimation />
+          </ContentWrapper>
+        </Wrapper>
+      </ThemeProvider>
   );
 };
 export default HeroSection;
@@ -94,4 +169,4 @@ const Title = styled(H1)`
   }
 `;
 
-const Description = styled(MediumText)``;
+const Description = styled(Paragraph)``;
